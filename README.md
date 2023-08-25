@@ -44,6 +44,7 @@ Construye TODO Machine, la aplicación para guardar tareas pendientes, mientras 
 ### Maquetación con React.js
 
 - [¿Qué es un componente?](./Apuntes/Maquetacion%20con%20React/que_es_un_componente.md)
+- [Componentes de Todo Machine](./Apuntes/Maquetacion%20con%20React/componentes_de_todo_machine.md)
 
 ### Interacción con React.js
 
