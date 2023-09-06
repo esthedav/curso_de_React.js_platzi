@@ -1,0 +1,10 @@
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+    padding: 48px;
+}
+h1 span{
+    font-weight: bolder;
+    color: rgb(250, 217, 167);
+}
