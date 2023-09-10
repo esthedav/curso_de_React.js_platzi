@@ -47,7 +47,10 @@ Construye TODO Machine, la aplicación para guardar tareas pendientes, mientras 
 - [Componentes de Todo Machine](./Apuntes/Maquetacion%20con%20React/componentes_de_todo_machine.md)
 - [Como se comunican los componentes props y atributos](./Apuntes/Maquetacion%20con%20React/como_se_comunican_los_componentes_props_y_atributos.md)
 - [Estilos CSS en React](./Apuntes/Maquetacion%20con%20React/estilos_en_react.md)
+
 ### Interacción con React.js
+
+- [Eventos en React: onClick, on Change](./Apuntes/interaccion_con_react/eventos_en_react_onclick_on_change.md)
 
 ### Librería de Iconos Personalizados
 
