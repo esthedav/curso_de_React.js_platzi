@@ -51,6 +51,7 @@ Construye TODO Machine, la aplicación para guardar tareas pendientes, mientras 
 ### Interacción con React.js
 
 - [Eventos en React: onClick, on Change](./Apuntes/interaccion_con_react/eventos_en_react_onclick_on_change.md)
+- [¿Qué es el estado?](./Apuntes/interaccion_con_react/que_es_el_estado.md)
 
 ### Librería de Iconos Personalizados
 

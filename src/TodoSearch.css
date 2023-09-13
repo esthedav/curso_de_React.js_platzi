@@ -1,15 +1,23 @@
 input {
     width: 80%;
+    height: 100%;
     margin-left: 10%;
     margin-bottom: 2rem;
-    padding: 1rem;
+    padding: 16px;
     border-radius: 15px;
     border: none;
-    line-height: 1.2rem;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     outline: none;
-    font-weight: bold;
+    font-weight: bolder;
+    text-align: center;
+    color: #242c2e;
 }
 input::placeholder {
     font-weight: bold;
+}
+input:focus {
+    transition: 0.5s ease;
+    background-color: rgba(211, 213, 213);
 }
