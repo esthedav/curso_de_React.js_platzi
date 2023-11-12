@@ -20,18 +20,35 @@ localStorage.setItem('TODOS_default', JSON.stringify(defaultTodos))
 localStorage.removeItem('TODOS_default')
  */
 
-function App() {
-    let parsedTodos = JSON.parse(localStorage.getItem('TODOS_default')) || [{ text: 'Escribir mi primer TODO', completed: false}]
 
-    const [todos, setTodos] = useState(parsedTodos)
+function useLocalStorage (itemName){
+
+    let parsedItems = JSON.parse(localStorage.getItem(itemName)) || [{ text: 'Escribir mi primer TODO', completed: false}]
+
+    const [item, setItem] = useState(parsedItems);
+
+    // Salvar con persistencia
+    const saveItem = (itemValue) => {
+        localStorage.setItem(itemName, JSON.stringify(itemValue))
+        setItem(itemValue)
+    }
+
+    return [item, saveItem]
+
+
+}
+
+function App() {
+
+    const [todos, saveTodos] = useLocalStorage('TODOS_default')
     const completedTodos = todos.filter(todo => todo.completed).length
     const totalTodos = todos.length
 
-    // Salvar con persistencia
-    const saveTodos = (newTodos) => {
-        localStorage.setItem('TODOS_default', JSON.stringify(newTodos))
-        setTodos(newTodos)
-    }
+    // // Salvar con persistencia
+    // const saveTodos = (newTodos) => {
+    //     localStorage.setItem('TODOS_default', JSON.stringify(newTodos))
+    //     setTodos(newTodos)
+    // }
 
 
     const [searchValue, setSearchValue] = useState('');
