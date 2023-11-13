@@ -1,6 +1,15 @@
+import React from 'react';
+import { TodoContext } from '../TodoContext';
+
 import './style.css';
 
-function TodoCounter({ total, completed, loading, error }) {
+function TodoCounter() {
+    const {
+        loading,
+        error,
+        completedTodos : completed,
+        totalTodos : total,
+    } = React.useContext(TodoContext)
 
     let headerText
 
