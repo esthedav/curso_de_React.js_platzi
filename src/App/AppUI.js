@@ -4,8 +4,13 @@ import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton';
+import { TodosLoading } from '../TodosLoading';
+import { EmptyTodos } from '../EmptyTodos';
+import { TodosError} from '../TodosError';
 
 function AppUI({
+    loading,
+    error,
     completedTodos,
     totalTodos,
     searchValue,
@@ -17,6 +22,8 @@ function AppUI({
     return (
         <>
         <TodoCounter
+                loading={loading}
+                error={error}
                 completed={completedTodos}
                 total={totalTodos}
             />
@@ -27,6 +34,10 @@ function AppUI({
             />
 
             <TodoList>
+                {loading && <TodosLoading/>}
+                {error && <TodosError/>}
+                {(!error && !loading && totalTodos.length === 0) && <EmptyTodos/>}
+
                 {searchedTodos.map(todo => (
                     <TodoItem 
                         key={todo.text} 

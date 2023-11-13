@@ -1,9 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 function useLocalStorage (itemName){
 
-    let parsedItems = JSON.parse(localStorage.getItem(itemName)) || [{ text: 'Escribir mi primer TODO', completed: false}]
+    const [item, setItem] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
 
-    const [item, setItem] = useState(parsedItems);
+
+    useEffect(() => {
+        setTimeout(() => {
+            try {
+                let parsedItems = JSON.parse(localStorage.getItem(itemName)) || [{ text: 'Escribir mi primer TODO', completed: false}]
+                setLoading(false)
+                setItem(!error ? parsedItems : [])
+            } catch(e) {
+                setLoading(false)
+                setError(true)
+            }
+        }, 1000)
+    }, [itemName, error])
+
 
     // Salvar con persistencia
     const saveItem = (itemValue) => {
@@ -11,7 +27,12 @@ function useLocalStorage (itemName){
         setItem(itemValue)
     }
 
-    return [item, saveItem]
+    return {
+        item,
+        saveItem,
+        error,
+        loading
+    }
 }
 
 export { useLocalStorage }

@@ -1,21 +1,24 @@
 import './style.css';
 
-function TodoCounter({ total, completed }) {
+function TodoCounter({ total, completed, loading, error }) {
 
-    let headerText = <>Has completado <span>{completed}</span> de <span>{total}</span> TODOS</>
+    let headerText
 
-    if (total === 0) {
+    if (error) {
+        headerText = "Algo salio mal 💀"
+    }
+    else if (total === 0) {
         headerText = "No Tienes Todos para hoy 💤"
     }
     else if (completed === total) {
-        headerText = "Felicidades no tienes mas Todos Pendientes 🎉"
+        headerText = "Felicidades completaste Todo 🎉"
+    } else {
+        headerText = <>Has completado <span>{completed}</span> de <span>{total}</span> TODOS</>
     }
-
 
     return(
         <h1>
-            {headerText}
-        {/* Has completado <span>{completed}</span> de <span>{total}</span> TODOS */}
+            {loading ? <>Cargando Todos 🐶</>: headerText}
         </h1>
     )
 }

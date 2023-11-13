@@ -6,16 +6,17 @@
     cursor: pointer;
     font-size: 50px;
     position: fixed;
-    bottom: 24px;
+    top: 24px;
     right: 24px;
     font-weight: bold;
     color: aliceblue;
     height: 64px;
     width: 64px;
     transform: rotate(0);
-    transition: .5s ease;
+    transition: 0.5s ease-in-out;
 }
 .CreateTodoButton:hover {
     transform: rotate(135deg);
-    transition: .5s ease;
+    transition: .5s ease-in-out;
+    background-color: #03708e;
 }

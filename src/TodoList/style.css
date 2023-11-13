@@ -1,6 +1,18 @@
 ul {
     list-style: none;
+    height: 400px;
+    width: 534px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    padding-right: 8px;
+    margin-right: 20px;
+    overflow: auto;
+}
+ul::-webkit-scrollbar {
+    width: 2px;
+}
+ul::-webkit-scrollbar-thumb {
+    background: #8f96a3;
+    border-radius: 14px;
 }

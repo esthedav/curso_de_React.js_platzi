@@ -1,5 +1,5 @@
 input {
-    width: 80%;
+    width: 76%;
     height: 100%;
     margin-left: 10%;
     margin-bottom: 2rem;
@@ -20,4 +20,15 @@ input::placeholder {
 input:focus {
     transition: 0.5s ease;
     background-color: rgba(211, 213, 213);
+}
+.search-reset {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: .5rem;
+    border-radius: 50%;
+    translate: -100%;
+    font-weight: bold;
+    color: #2c2e2e;
+    border: solid 1px red;
 }

@@ -11,6 +11,10 @@ const defaultTodos = [
     { text: 'Llorar con la llorona', completed: false},
     { text: 'LALALALA', completed: true},
     { text: 'El quinto Elemento', completed: false},
+    { text: 'Cortar tomate', completed: false},
+    { text: 'Realizar la tarea', completed: false},
+    { text: 'Reto del esqueleto', completed: false},
+    { text: 'Tomar el Curso de Intro a React.js Tomar el Curso de Intro a React.js', completed: false},
 ]
 
 localStorage.setItem('TODOS_default', JSON.stringify(defaultTodos))
@@ -20,12 +24,14 @@ localStorage.removeItem('TODOS_default')
 function App() {
 
     // Definimos los todos que se han completado
-    const [todos, saveTodos] = useLocalStorage('TODOS_default')
+    const {item: todos, saveItem: saveTodos, error, loading} = useLocalStorage('TODOS_default')
     const completedTodos = todos.filter(todo => todo.completed).length
     const totalTodos = todos.length
 
+
     // Buscamos y filtramos entre los todos que tenemos
     const [searchValue, setSearchValue] = useState('');
+    
     const searchedTodos = todos.filter((todo) => {
         const todoText = todo.text.toLowerCase()
         const searchText = searchValue.toLocaleLowerCase()
@@ -58,6 +64,8 @@ function App() {
                 searchedTodos={searchedTodos}
                 completeTodo={completeTodo}
                 deleteTodo={deleteTodo}
+                error={error}
+                loading={loading}
             />
     );
 }
