@@ -33,10 +33,23 @@ function TodoProvider({ children }) {
         const todoIndex = newTodos.findIndex(todo => todo.text === text)
         newTodos.splice(todoIndex, 1)
         saveTodos(newTodos)
+        console.log(newTodos)
     }
 
     // Modal
     const [openModal, setOpenModal] = useState(false);
+
+    // Add new Todo
+    const addNewTodo = (text) => {
+        const newTodos = [...todos]
+        newTodos.push({
+            text,
+            completed : false
+        })
+        localStorage.setItem('TODOS_default', JSON.stringify(newTodos))
+        saveTodos(newTodos)
+
+    }
 
     return (
         <TodoContext.Provider
@@ -52,6 +65,7 @@ function TodoProvider({ children }) {
                 deleteTodo,
                 openModal,
                 setOpenModal,
+                addNewTodo,
             }}
         >
             {children}

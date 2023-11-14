@@ -12,12 +12,12 @@ function useLocalStorage (itemName){
             try {
                 let parsedItems = JSON.parse(localStorage.getItem(itemName)) || [{ text: 'Escribir mi primer TODO', completed: false}]
                 setLoading(false)
-                setItem(!error ? parsedItems : [])
+                setItem(!error ? parsedItems : '')
             } catch(e) {
                 setLoading(false)
                 setError(true)
             }
-        }, 1000)
+        }, 700)
     }, [itemName, error])
 
 

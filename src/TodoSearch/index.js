@@ -19,7 +19,7 @@ function TodoSearch() {
     <>
       <input
         className='TodoSearch'
-        placeholder='Dominar el mundo'
+        placeholder='Buscalo 🔍'
         value={searchValue}
         onChange={(e) => {
           setSearchValue(e.target.value)

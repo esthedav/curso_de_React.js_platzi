@@ -1,4 +1,5 @@
 .todoCreateForm {
+    /* Modal style */
     height: 500px;
     width: 500px;
     position: absolute;
@@ -8,4 +9,57 @@
     background-color: rgb(29, 30, 30);
     border-radius: 1rem;
     z-index: 1;
+    /* Estilos de formulario */
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 70px repeat(3, 60px) 1px 70px;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 
+    "header header"
+    "textarea textarea"
+    "textarea textarea"
+    "textarea textarea"
+    "________ ________"
+    "btnCancel btnAdd";
+    padding: 2rem;
+    row-gap: 1.5rem;
+    & label{
+        grid-area: header;
+        place-self: center;
+        font-size: 1.7rem;
+        font-weight: bold;
+        filter: drop-shadow(0 4px 4px rgba(255, 255, 255, 0.3));
+    }
+}
+.todoCreateForm__textarea {
+    grid-area: textarea;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0 1rem;
+    font-size: 1.2rem;
+    outline-color: #038eb4;
+}
+.todoCreateForm__btn--cancel {
+    grid-area: btnCancel;
+    background-color: rgb(180, 3, 3);
+
+}
+.todoCreateForm__btn--add {
+    grid-area: btnAdd;
+    background-color: #038eb4;
+}
+.todoCreateForm__btn {
+    height: 50%;
+    width: 82%;
+    place-self: center;
+    border-radius: 0.7rem;
+    border: none;
+    font-weight: bold;
+    color: aliceblue;
+    cursor: pointer;
+    transition: 0.5s ease;
+    &:hover {
+        transition: 0.5s ease-in-out;
+        transform: scale(1.1);
+    }
 }
