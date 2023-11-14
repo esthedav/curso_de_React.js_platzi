@@ -5,13 +5,15 @@
     border-radius: 50%;
     cursor: pointer;
     font-size: 50px;
-    position: fixed;
-    top: 24px;
-    right: 24px;
     font-weight: bold;
     color: aliceblue;
     height: 64px;
     width: 64px;
+    position: absolute;
+    top: 24px;
+    right: 32%;
+    z-index: 999;
+
     transform: rotate(0);
     transition: 0.5s ease-in-out;
 }

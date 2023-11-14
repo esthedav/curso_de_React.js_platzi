@@ -10,7 +10,7 @@ body {
   height: 100vh;
 }
 
-#root {
+.TodoContainer {
   width: 70ch;
   position: absolute;
   top: 50%;

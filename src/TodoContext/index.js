@@ -35,6 +35,9 @@ function TodoProvider({ children }) {
         saveTodos(newTodos)
     }
 
+    // Modal
+    const [openModal, setOpenModal] = useState(false);
+
     return (
         <TodoContext.Provider
             value={{
@@ -47,6 +50,8 @@ function TodoProvider({ children }) {
                 searchedTodos,
                 completeTodo,
                 deleteTodo,
+                openModal,
+                setOpenModal,
             }}
         >
             {children}
