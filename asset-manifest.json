@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/curso_de_React.js_platzi/static/css/main.549ee6b2.css",
+    "main.js": "/curso_de_React.js_platzi/static/js/main.89eb090f.js",
+    "static/media/error.png": "/curso_de_React.js_platzi/static/media/error.e281ab3d4c3d8991e1a5.png",
+    "static/media/notFound.png": "/curso_de_React.js_platzi/static/media/notFound.b794ba0049a3e2d287b6.png",
+    "static/media/relaxing.png": "/curso_de_React.js_platzi/static/media/relaxing.51d87ef908e5dd76883f.png",
+    "index.html": "/curso_de_React.js_platzi/index.html",
+    "main.549ee6b2.css.map": "/curso_de_React.js_platzi/static/css/main.549ee6b2.css.map",
+    "main.89eb090f.js.map": "/curso_de_React.js_platzi/static/js/main.89eb090f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.549ee6b2.css",
+    "static/js/main.89eb090f.js"
+  ]
+}
